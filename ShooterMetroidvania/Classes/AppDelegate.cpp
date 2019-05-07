@@ -83,7 +83,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("ShooterMetroidvania", cocos2d::Rect(0, 0, 1920, 1080));
+        glview = GLViewImpl::createWithRect("ShooterMetroidvania", cocos2d::Rect(0, 0, 1920 / 2, 1080 / 2));
 #else
         glview = GLViewImpl::create("ShooterMetroidvania");
 #endif

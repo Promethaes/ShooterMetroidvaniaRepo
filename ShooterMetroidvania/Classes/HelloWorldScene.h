@@ -26,7 +26,10 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "Hitbox.h"
+
+#include "Events.h"
+#include "Input.h"
+#include "Player.h"
 
 class HelloWorld : public cocos2d::Scene
 {
@@ -40,8 +43,8 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 
+	Sedna::Player* testPlayer;
 
-	Sedna::Hitbox* testBox;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

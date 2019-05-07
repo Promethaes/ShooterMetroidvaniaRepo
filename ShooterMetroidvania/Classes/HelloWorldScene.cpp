@@ -24,6 +24,7 @@
 
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include <iostream>
 
 USING_NS_CC;
 
@@ -51,15 +52,20 @@ bool HelloWorld::init()
 
 
 
-
+	testPlayer = new Sedna::Player("HelloWorld.png", this);
   
+	this->scheduleUpdate();
     return true;
 }
 
 void HelloWorld::update(float dt)
 {
+	testPlayer->checkInput(dt);
+	
+	for (int i = 0; i < Sedna::GameObject::gameObjects.size(); i++)
+		Sedna::GameObject::gameObjects[i].gameObjectUpdate(dt);
 
-
+	std::cout << testPlayer->getHitbox()->bottomLeft.y << "\n";
 }
 
 
