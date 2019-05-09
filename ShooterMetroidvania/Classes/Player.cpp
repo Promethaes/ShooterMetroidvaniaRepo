@@ -9,7 +9,7 @@ namespace Sedna {
 	void Player::gameObjectUpdate(float dt)
 	{
 		if (hitbox->getNode()->getPosition().y > 20.0f)
-			hitbox->addForce(cocos2d::Vec2(0, -5.0f), dt);
+			hitbox->addForce(cocos2d::Vec2(0, -6.5f), dt);
 		else if (hitbox->getNode()->getPosition().y - hitbox->topRight.y <= 20.0f) {
 			if (!isEvent(Events::W))
 				hitbox->velocity.y = 0.0f;
@@ -23,9 +23,9 @@ namespace Sedna {
 	void Player::checkInput(float dt)
 	{
 		if (isEvent(Events::W))
-			hitbox->addForce(cocos2d::Vec2(0, 10.0f), dt);
-		else if (isEvent(Events::S))
-			hitbox->addForce(cocos2d::Vec2(0, -10.0f), dt);
+			hitbox->velocity.y = 5.0f;
+		//else if (isEvent(Events::S))
+		//	hitbox->addForce(cocos2d::Vec2(0, -10.0f), dt);
 
 
 		if (isEvent(Events::A))
