@@ -53,7 +53,8 @@ bool HelloWorld::init()
 
 
 	testPlayer = new Sedna::Player("HelloWorld.png", this);
-  
+	gameObjects.push_back(testPlayer);
+
 	this->scheduleUpdate();
     return true;
 }
@@ -62,10 +63,11 @@ void HelloWorld::update(float dt)
 {
 	testPlayer->checkInput(dt);
 	
-	for (int i = 0; i < Sedna::GameObject::gameObjects.size(); i++)
-		Sedna::GameObject::gameObjects[i].gameObjectUpdate(dt);
+	for (int i = 0; i < gameObjects.size(); i++)
+		gameObjects[i]->gameObjectUpdate(dt);
 
-	std::cout << testPlayer->getHitbox()->bottomLeft.y << "\n";
+	std::cout << testPlayer->getHitbox()->getVelocity().x<<"\n";
+
 }
 
 

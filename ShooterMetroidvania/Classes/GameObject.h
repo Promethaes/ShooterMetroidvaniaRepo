@@ -10,11 +10,10 @@ namespace Sedna {
 		GameObject(const cocos2d::Vec2& first, const cocos2d::Vec2& second, std::string spritePath, cocos2d::Scene* scene);
 		
 
-		void gameObjectUpdate(float dt);
+		virtual void gameObjectUpdate(float dt);
 
 		cocos2d::Sprite* getSprite() const { return sprite; }
 		Hitbox* getHitbox() const { return hitbox; }
-		static std::vector<GameObject>gameObjects;
 
 	protected:
 		Hitbox* hitbox;
