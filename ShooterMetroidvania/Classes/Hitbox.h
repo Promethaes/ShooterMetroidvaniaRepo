@@ -15,11 +15,10 @@ namespace Sedna {
 		cocos2d::DrawNode* getNode() const { return node; }
 		
 		
-		cocos2d::Vec2 getVelocity() const { return velocity; }
 		cocos2d::Vec2 bottomLeft;
 		cocos2d::Vec2 topRight;
-	private:
 		cocos2d::Vec2 velocity;
+	private:
 
 
 

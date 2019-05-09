@@ -14,8 +14,9 @@ namespace Sedna {
 		if (hitbox->bottomLeft.y > 0)
 			hitbox->addForce(cocos2d::Vec2(0, -0.98f), dt);
 		else if (hitbox->bottomLeft.y <= 0) {
-			hitbox->setForce(cocos2d::Vec2(hitbox->getVelocity().x, 0), dt);
-			hitbox->bottomLeft.y = 0.0f;
+			hitbox->velocity.y = 0.0f;
+
+			hitbox->getNode()->setPosition(hitbox->getNode()->getPosition().x, 20.0f);
 
 		}
 		hitbox->update(dt);
