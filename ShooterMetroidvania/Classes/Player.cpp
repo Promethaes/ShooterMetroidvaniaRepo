@@ -11,10 +11,10 @@ namespace Sedna {
 		if (hitbox->getNode()->getPosition().y > 20.0f)
 			hitbox->addForce(cocos2d::Vec2(0, -3.0f), dt);
 		else if (hitbox->getNode()->getPosition().y - hitbox->topRight.y <= 20.0f) {
-			if (!isEvent(Events::W)) {
+			if (!isEvent(Events::W))
 				hitbox->setForce(cocos2d::Vec2(hitbox->getVelocity().x, 0), dt);
-				hitbox->getNode()->setPosition(hitbox->getNode()->getPosition().x, 20.0f);
-			}
+
+			hitbox->getNode()->setPosition(hitbox->getNode()->getPosition().x, 20.0f);
 
 		}
 		hitbox->update(dt);

@@ -66,7 +66,6 @@ void HelloWorld::update(float dt)
 	for (int i = 0; i < gameObjects.size(); i++)
 		gameObjects[i]->gameObjectUpdate(dt);
 
-	std::cout << testPlayer->getHitbox()->getVelocity().x<<"\n";
 
 }
 
