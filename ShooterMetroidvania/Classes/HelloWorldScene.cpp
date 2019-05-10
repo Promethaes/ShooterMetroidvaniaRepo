@@ -54,6 +54,7 @@ bool HelloWorld::init()
 
 	testPlayer = new Sedna::Player("HelloWorld.png", this);
 	gameObjects.push_back(testPlayer);
+	this->addChild(background, -100);
 
 	this->scheduleUpdate();
     return true;
@@ -66,6 +67,7 @@ void HelloWorld::update(float dt)
 	for (int i = 0; i < gameObjects.size(); i++)
 		gameObjects[i]->gameObjectUpdate(dt);
 
+	this->getDefaultCamera()->setPosition(testPlayer->getHitbox()->getNode()->getPosition());
 
 }
 
