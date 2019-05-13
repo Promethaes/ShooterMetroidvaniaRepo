@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "Input.h"
 #include "Events.h"
+#include "Projectile.h"
 
 namespace Sedna {
 	class Player : public GameObject {
@@ -10,8 +11,22 @@ namespace Sedna {
 
 		void gameObjectUpdate(float dt) override;
 		void checkInput(float dt);
+		void shoot(float dt);
+		void playerUpdate(float dt);
+		void OnMouseMove(cocos2d::EventMouse* e);
 
+		std::vector<Projectile*> getProjectiles() const { return pProjectiles; }
+
+		cocos2d::EventListenerMouse* mouse = cocos2d::EventListenerMouse::create();
 	private:
+		std::vector<Projectile*> pProjectiles;
+		float shootTimer = 0;
+		bool hasShot = false;
+		cocos2d::Scene* scene;
+		cocos2d::Vec2 mousePosition;
 
 	};
+
+	
 }
+

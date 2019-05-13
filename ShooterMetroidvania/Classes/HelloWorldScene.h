@@ -44,8 +44,10 @@ public:
 	CREATE_FUNC(HelloWorld);
 
 	Sedna::Player* testPlayer;
-	std::vector <Sedna::GameObject*> gameObjects;
 	cocos2d::Sprite* background = cocos2d::Sprite::create("FOOLS.jpg");
+
+
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

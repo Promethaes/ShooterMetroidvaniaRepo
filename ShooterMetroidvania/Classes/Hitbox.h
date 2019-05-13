@@ -14,7 +14,8 @@ namespace Sedna {
 		bool checkCollision(const Hitbox& other);
 		cocos2d::DrawNode* getNode() const { return node; }
 		
-		
+		cocos2d::Vec2 getCentre() const { return (bottomLeft + topRight) / 2.0f; }
+
 		cocos2d::Vec2 bottomLeft;
 		cocos2d::Vec2 topRight;
 		cocos2d::Vec2 velocity;

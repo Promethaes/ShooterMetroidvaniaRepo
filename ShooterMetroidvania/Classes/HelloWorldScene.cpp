@@ -49,12 +49,12 @@ bool HelloWorld::init()
     {
         return false;
     }
-
-
-
+	
 	testPlayer = new Sedna::Player("HelloWorld.png", this);
-	gameObjects.push_back(testPlayer);
 	this->addChild(background, -100);
+
+	this->getEventDispatcher()->addEventListenerWithFixedPriority(testPlayer->mouse, 10);
+
 
 	this->scheduleUpdate();
     return true;
@@ -64,12 +64,12 @@ void HelloWorld::update(float dt)
 {
 	testPlayer->checkInput(dt);
 	
-	for (int i = 0; i < gameObjects.size(); i++)
-		gameObjects[i]->gameObjectUpdate(dt);
+	for (int i = 0; i < Sedna::GameObject::gameObjects.size(); i++)
+		Sedna::GameObject::gameObjects[i]->gameObjectUpdate(dt);
 
-	this->getDefaultCamera()->setPosition(testPlayer->getHitbox()->getNode()->getPosition());
 
 }
+
 
 
 

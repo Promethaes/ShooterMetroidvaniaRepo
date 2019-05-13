@@ -1,4 +1,5 @@
 #pragma once
+#include "cocos2d.h"
 //all of this code is from a previous GDW game and Game Programming Club in one of last semester's sessions.
 namespace Events {
 	//enum to make it easier to use
@@ -162,4 +163,5 @@ namespace Events {
 		OEMClear = 0xFE,
 		NUM_EVENTS = 0xFF
 	};
+
 }
