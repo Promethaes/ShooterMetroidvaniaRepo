@@ -22,7 +22,7 @@ namespace Sedna {
 
 		}
 		hitbox->update(dt);
-		sprite->setPosition(hitbox->getNode()->getPosition() + hitbox->bottomLeft+ hitbox->topRight);
+		sprite->setPosition(hitbox->getNode()->getPosition());
 
 	}
 }
