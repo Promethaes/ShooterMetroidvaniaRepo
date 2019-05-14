@@ -2,13 +2,14 @@
 #include "Hitbox.h"
 #include <vector>
 #include <string>
+#define Floor 100.0f
 //may or may not be a sedna product...we'll see
 namespace Sedna {
 
 	class GameObject {
 	public:
 		GameObject(const cocos2d::Vec2& first, const cocos2d::Vec2& second, std::string spritePath, cocos2d::Scene* scene);
-
+		GameObject(std::string spritePath, cocos2d::Scene* scene);
 
 		virtual void gameObjectUpdate(float dt);
 

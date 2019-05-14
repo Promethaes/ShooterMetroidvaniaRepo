@@ -4,7 +4,7 @@
 namespace Sedna {
 
 	Player::Player(const std::string spritePath, cocos2d::Scene * scene, const cocos2d::Vec2 & first, const cocos2d::Vec2 & second)
-		:GameObject(first, second, spritePath, scene)
+		:GameObject(spritePath, scene)
 	{
 		this->scene = scene;
 		mouse->onMouseMove = CC_CALLBACK_1(Player::OnMouseMove, this);
@@ -12,13 +12,13 @@ namespace Sedna {
 	}
 	void Player::gameObjectUpdate(float dt)
 	{
-		if (hitbox->getNode()->getPosition().y > 20.0f)
+		if (hitbox->getNode()->getPosition().y > Floor)
 			hitbox->addForce(cocos2d::Vec2(0, -6.5f), dt);
-		else if (hitbox->getNode()->getPosition().y - hitbox->topRight.y <= 20.0f) {
+		else if (hitbox->getNode()->getPosition().y - hitbox->topRight.y <= Floor) {
 			if (!isEvent(Events::W))
 				hitbox->velocity.y = 0.0f;
 
-			hitbox->getNode()->setPosition(hitbox->getNode()->getPosition().x, 20.0f);
+			hitbox->getNode()->setPosition(hitbox->getNode()->getPosition().x, Floor);
 
 		}
 		hitbox->update(dt);
@@ -57,7 +57,7 @@ namespace Sedna {
 			}
 			if (!hasShot) {
 				hasShot = true;
-				pProjectiles.push_back(new Projectile(cocos2d::Vec2(0.0f, 0.0f), cocos2d::Vec2(5.0f, 5.0f), scene));
+				pProjectiles.push_back(new Projectile(scene));
 				pProjectiles.back()->getHitbox()->getNode()->setPosition(this->getHitbox()->getNode()->getPosition());
 
 

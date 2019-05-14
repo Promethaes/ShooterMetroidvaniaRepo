@@ -1,4 +1,5 @@
 #include "Hitbox.h"
+#include <iostream>
 namespace Sedna {
 
 	Hitbox::Hitbox(const cocos2d::Vec2& first, const cocos2d::Vec2& second, cocos2d::Scene * scene)
@@ -9,6 +10,7 @@ namespace Sedna {
 
 		node->drawRect(bottomLeft, topRight, cocos2d::Color4F(1.0f, 0.0f, 0.0f, 1.0f));
 		scene->addChild(node, 100);
+
 
 	}
 	void Hitbox::setForce(const cocos2d::Vec2 &v, float dt)
@@ -21,8 +23,9 @@ namespace Sedna {
 	}
 	void Hitbox::update(float dt)
 	{
-		//bottomLeft += velocity;
-		//topRight += velocity;
+		bottomLeft += velocity;
+		topRight += velocity;
+
 
 		auto temp = cocos2d::Vec2(node->getPosition() + velocity);
 		//node->clear();
