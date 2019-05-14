@@ -6,7 +6,7 @@ namespace Sedna {
 		:bottomLeft(first), topRight(second)
 	{
 		node = cocos2d::DrawNode::create();
-		node->setAnchorPoint(cocos2d::Vec2(0.0f, 0.0f));
+		//node->setAnchorPoint(cocos2d::Vec2(0.0f, 0.0f));
 
 		node->drawRect(bottomLeft, topRight, cocos2d::Color4F(1.0f, 0.0f, 0.0f, 1.0f));
 		scene->addChild(node, 100);
