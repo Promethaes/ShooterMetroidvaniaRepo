@@ -12,16 +12,5 @@ namespace Sedna {
 		: GameObject(spritePath, scene)
 	{
 	}
-	void Projectile::gameObjectUpdate(float dt)
-	{
-		if (hitbox->getNode()->getPosition().y > Floor)
-			hitbox->addForce(cocos2d::Vec2(0, -6.5f), dt);
-		else if (hitbox->getNode()->getPosition().y - hitbox->topRight.y <= Floor) {
-
-			hitbox->getNode()->setPosition(hitbox->getNode()->getPosition().x, Floor);
-
-		}
-		hitbox->update(dt);
-		sprite->setPosition(hitbox->getNode()->getPosition());
-	}
+	
 }

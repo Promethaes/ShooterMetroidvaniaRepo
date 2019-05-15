@@ -46,6 +46,7 @@ public:
 	Sedna::Player* testPlayer;
 	cocos2d::Sprite* background = cocos2d::Sprite::create("FOOLS.jpg");
 
+	Sedna::Hitbox* ground;
 
 
 };

@@ -28,9 +28,9 @@ namespace Sedna {
 
 
 		auto temp = cocos2d::Vec2(node->getPosition() + velocity);
-		//node->clear();
-		//node->drawRect(bottomLeft, topRight, cocos2d::Color4F(1.0f, 0.0f, 0.0f, 1.0f));
-		node->setPosition(temp);
+		node->clear();
+		node->drawRect(bottomLeft, topRight, cocos2d::Color4F(1.0f, 0.0f, 0.0f, 1.0f));
+		//node->setPosition(temp);
 
 	}
 	bool Hitbox::checkCollision(const Hitbox & other)

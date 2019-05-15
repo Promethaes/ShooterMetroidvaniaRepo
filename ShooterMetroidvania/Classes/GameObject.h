@@ -2,7 +2,8 @@
 #include "Hitbox.h"
 #include <vector>
 #include <string>
-#define Floor 100.0f
+#define Floor 40.0f 
+#define FloorCalculation hitbox->bottomLeft.y <= Floor + hitbox->bottomLeft.y
 //may or may not be a sedna product...we'll see
 namespace Sedna {
 
@@ -16,10 +17,12 @@ namespace Sedna {
 		cocos2d::Sprite* getSprite() const { return sprite; }
 		Hitbox* getHitbox() const { return hitbox; }
 		static std::vector<Sedna::GameObject*> gameObjects;
+		unsigned id;
 	protected:
 
 		Hitbox* hitbox;
 		cocos2d::Sprite* sprite;
 	};
+
 
 }
